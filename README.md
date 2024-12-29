@@ -1,40 +1,58 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+![Alt text](./images/screenshot.JPG)
 
-  https://www.figma.com/plugin-docs/plugin-quickstart-guide/
+### TypeScript Code for Figma Plugin Overview
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+This TypeScript code is designed as a Figma plugin to generate a detailed prompt for creating a reusable and performant UI component based on selected nodes within Figma.
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+#### Key Features:
 
-  https://nodejs.org/en/download/
+- **Utility Functions**: 
+  - The code includes functions to format numbers, colors, and strings.
 
-Next, install TypeScript using the command:
+- **Helper Functions**: 
+  - These extract various style properties from Figma nodes, like:
+    - Border width
+    - Color
+    - Radius
 
-  npm install -g typescript
+- **WidgetGenerator Function**: 
+  - Takes a Figma scene node and generates a prompt string detailing how to create a UI component based on:
+    - Node properties
+    - Styles
 
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
+- **Main Function**: 
+  - Serves as the entry point for prompt generation.
+  - Accepts a scene node and returns a prompt string.
 
-  npm install --save-dev @figma/plugin-typings
+- **Event Listener**: 
+  - Listens for messages from the Figma UI. Upon receiving a message, it:
+    - Generates a prompt based on the selected nodes.
+    - Sends the prompt back to the UI.
 
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
+#### Generated Prompt Details:
 
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
+- **Overview**:
+  - **Description**: Brief explanation of the component.
+  - **Type**: Specifies the kind of widget or component.
+  - **Framework**: Indicates which framework (e.g., TypeScript) should be used.
+  - **Accessibility**: Ensures components include necessary ARIA attributes.
 
-For more information, visit https://www.typescriptlang.org/
+- **Layout**:
+  - **Dimensions**: Size of the component.
+  - **Position**: Placement within the design.
+  - **Styles**: Visual properties like padding, alignment, and colors.
 
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
+- **Implementation**:
+  - Use of hooks like `useState` for state management.
+  - Use of flexbox for layout alignment.
+  - Incorporation of ARIA attributes for accessibility.
 
-We recommend writing TypeScript code using Visual Studio code:
+- **Usage**:
+  - Instructions on how to:
+    - Include the component in an application.
+    - Ensure responsiveness across devices.
+    - Maintain accessibility standards.
 
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "npm: watch". You will have to do this again every time
-    you reopen Visual Studio Code.
+#### Purpose:
 
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+The plugin aids developers in translating Figma designs into high-quality, reusable UI components, streamlining the development process by providing detailed component specifications directly from the design tool.
