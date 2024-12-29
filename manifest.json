@@ -1,0 +1,12 @@
+{
+  "name": "Figma -> AI Prompt Generator",
+  "id": "1454437203295682769",
+  "api": "1.0.0",
+  "main": "./dist/code.js",
+  "ui": "./scr/ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] },
+  "editorType": [
+    "figma"
+  ]
+}
